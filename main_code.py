@@ -2,7 +2,7 @@ import mbot2, event, time, cyberpi, mbuild
 
 # Initialize variables
 base_power = 40
-kp = 0.8
+kp = 0.7
 
 def ultra():
     return mbuild.ultrasonic2.get(index=1)
@@ -42,7 +42,7 @@ def handle_white_line():
         mbot2.drive_power(50, -9.5)   # Turn right
         return True
     elif white_line ==7 or white_line==0:
-        mbot2.drive_power(-14, 14)   # Turn right
+        mbot2.drive_power(-15, 15)   # Turn right
         return True
     return False  # Only return False if no white line detected
 
