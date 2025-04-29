@@ -22,9 +22,13 @@ Flowchart Description:
 3. Is Distance ≤ 15 ?: 
 - if yes: The robot stops its motors.
 - if No: The robot continues operating.
+  
 --Read L2,L1,R1,R2 color: The robot reads color sensor values (L2,L1,R1,R2) to identify the position of the line and modify its movement to remain on track.
+
 --Is handle_white_line() = true?
+
 ---if yes: The robot  moves according to handle_white_line() function.
+
 ---if no: The robot gets the offset which shows how far it has deviated from the target line. Based on the offset the robot calculates the left and right power of the motors and then it will drive using the calculated left power and right power.
 
 Wait 0.01 seconds: the robot waits for 0.01 seconds before looping back to measure distance. 
