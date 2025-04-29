@@ -2,33 +2,12 @@ import mbot2, event, time, cyberpi, mbuild
 
 # Initialize variables
 base_power = 40
-kp = 0.7
+kp = 0.65
 
 def ultra():
     return mbuild.ultrasonic2.get(index=1)
     
     
-@event.is_press('a')
-def is_btn_press():
-    cyberpi.stop_other()
-    while True:
-        l2_color = mbuild.quad_rgb_sensor.get_color_sta("L2")
-        l1_color = mbuild.quad_rgb_sensor.get_color_sta("L1")
-        r1_color = mbuild.quad_rgb_sensor.get_color_sta("R1")
-        r2_color = mbuild.quad_rgb_sensor.get_color_sta("R2")
-        if l2_color == "black" and l1_color == "black" and r2_color == "black" and r1_color == "black":
-            mbot2.drive_power(0, 0)  # First stop the robot
-            time.sleep(0.5)
-            mbot2.drive_power(30, -30)
-            time.sleep(0.75)
-            mbot2.drive_power(0, 0)
-            break
-        else:
-            # Fall back to black line following
-            offset = mbuild.quad_rgb_sensor.get_offset_track(1)
-            left_power = -1 * (base_power + kp * offset)
-            right_power = base_power - kp * offset
-            mbot2.drive_power(right_power, left_power)
     
 def handle_white_line():
     white_line = cyberpi.quad_rgb_sensor.get_white_sta("all", 1)  
