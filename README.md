@@ -16,6 +16,23 @@ FLOWCHART
 
 ![Flowchart (1)](https://github.com/user-attachments/assets/46373e6f-18d6-4ecc-ae13-65b7ba868f71)
 
+Flowchart Description: 
+Start: The program starts.
+Measure Distance: The robot measures the distance from an object using an ultrasonic sensor.
+Is Distance ≤ 15 ?: 
+if yes: The robot stops its motors.
+if No: The robot continues operating.
+Read L2,L1,R1,R2 color: The robot reads color sensor values (L2,L1,R1,R2) to identify the position of the line and modify its movement to remain on track.
+Is handle_white_line() = true?
+if yes: The robot  moves according to handle_white_line() function.
+if no: The robot gets the offset which shows how far it has deviated from the target line. Based on the offset the robot calculates the left and right power of the motors and then it will drive using the calculated left power and right power.
+Wait 0.01 seconds: the robot waits for 0.01 seconds before looping back to measure distance. 
+
+
+
+
+
+
 Team members:
 - Hajar  Alnaqbi
 - Alia Alkaabi
