@@ -1,5 +1,6 @@
 # Autonomous Line-Following Robot (mBot2)
 
+![robot](https://github.com/user-attachments/assets/49104c6e-4afc-4ef6-af53-b64952635b35)
 
 Project Overview
 This project demonstrates an autonomous robot using the mBot2 to navigate a predefined track in the fastest time possible. The robot earns points by successfully reaching milestones while remaining fully autonomous, balancing speed optimization and accurate line tracking.
